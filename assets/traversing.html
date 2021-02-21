@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Belajar JQuery</title>
+	<style>
+		#boxes_wrap{
+			background : grey;
+			width: 100px;
+			height: 100px;
+			padding: 10px;
+			border: 5px solid black;
+			margin: 10px;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+	<h1 class="change">Belajar JQuery</h1>
+
+<div id="tester">
+	<div>
+	Div Pertama Banget
+	</div>
+	<div>
+	Div Kedua Banget
+		<ul>
+			<li>List Pertama</li>
+		</ul>
+		<ul>
+			<p>Paragraf Atas</p>
+			<li>Belajar</li>
+			<li>Html</li>
+			<li id='css'>Css</li>
+			<li>JQuery</li>
+			<li id='php'>PHP</li>
+			<li>Database</li>
+			<div>
+				<p>Paragraf Dalam</p>
+				<span>Span Dalam</span>
+			</div>
+			<span>Span Luar</span>
+		</ul>
+	</div>
+</div>
+
+	<script>
+		
+		$(document).ready(function() {
+
+			//-----Traversing-----
+			// $('li').first().css('color','red');
+			// $('li').eq(2).css('color','blue');
+			// $('li').last().css('color','aqua');
+
+			// $('li').filter('#css').css('fontSize','25px');
+			// $('li').not('#css').css('background','yellow');
+
+			//-----siblings next nextAll nextUntil('param') ~ prev
+			// $('#css').siblings().css('fontSize', '20px');
+			// $('#css').nextUntil('#php').css('color', 'red');
+
+			//-----children find parent parents() parentsUntil
+			// $('ul').children('span').css('color', 'red');
+			//$('ul').find('span').css('color', 'red');
+
+			$('#css').parentsUntil('#tester').css('border', 'solid red');
+
+		});
+		
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Belajar JQuery</title>
+	<style>
+		#boxes_wrap{
+			background : grey;
+			width: 100px;
+			height: 100px;
+			padding: 10px;
+			border: 5px solid black;
+			margin: 10px;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+	<h1>Belajar JQuery</h1>
+
+	<div id="boxes_wrap">
+		<div id="box1">Box 1</div>
+		<div class="boxes">Baris pertama</div>
+		<div class="boxes">Baris kedua</div>
+		<div class="boxes">Baris ketiga</div>
+	</div>
+
+	<form>
+		<input type="text" id="inputText">
+		<input type="submit">
+	</form>
+
+	<script>
+		// Memastikan file sudah di load sempurna
+		$(document).ready(function() {
+			// Selection
+			// $('h1').css('color', 'blue');
+			// $('#box1').css('color', 'red');
+			// $('.boxes').css('color', 'yellow');
+			// Event
+			$('h1').click(function(){
+				$('h1').css({
+					'color': 'red',
+					'fontSize' : '20px',
+					'backgroundColor' : 'yellow'
+				});
+			});
+
+			// $('h1').mouseenter(function(){
+			// 	$('h1').css('color', 'yellow');
+			// });
+
+			// $('h1').mouseleave(function(){
+			// 	$('h1').css('color', 'aqua');
+			// });
+
+			// $('.boxes').mouseenter(function(){
+			// 	$('.boxes').css('color', 'red');
+			// });
+
+			// $('.boxes').mouseleave(function(){
+			// 	$(this).css('color', 'aqua');
+			// });
+
+			// Get dan Set nilai
+			$('form').submit(function(){
+				var tulisan = $('#inputText').val();
+				$('h1').text(tulisan);
+				// Mencegah Sifat
+				event.preventDefault();
+			});
+
+			// Menambah dan Menghapus
+			// append prepend | after before
+			$('#boxes_wrap').before('<div>Hallo</div>');
+
+			// remove empty
+			// $('#boxes_wrap').empty();
+
+			// Dimensi
+			// widht -> kontent
+			// innerWidht -> kontent + padding
+			// outerWidht -> kontent + padding + border
+				// (true) -> margin
+			var nilai = $('#boxes_wrap').height(120).widht(120);
+			$('#box1').text(nilai);
+
+		});
+	</script>
+
+</body>
+</html>
